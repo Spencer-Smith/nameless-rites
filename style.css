@@ -1,51 +1,52 @@
 /* COLORS:
-  purple: 30323d
-  red: 470e0a
-  black: 121616
-  green: 28502e
-  yellow: e8c547
+  red: 640d14
+  dark purple: 140610
+  light purple: 785964
+  dark green: 14281d
+  light green: 96c181
 */
 body { 
   margin: 0;
-  font-family:'Helvetica';
+  font-family:'Roboto Slab';
 }
 /*--Header--*/
 .header {
   position: fixed;
   top: 0;
-  height: 40px;
   width: 100%;
-  background: #121616;
+  height: 55px;
 }
 .header ul {
   list-style-type: none;
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background: #121616;
+  background: #140610;
 }
 .header li {
   float: left;
-  font-size: 1.2em;
+  font-family: 'Permanent Marker';
+  font-size: 1.1em;
   border-right: 1px solid #fff;
 }
 .header li a {
   display: block;
-  color: white;
+  color: #fff;
   text-align: center;
+  width: 100px;
   padding: 14px 16px;
   text-decoration: none;
 }
 .header li a:hover:not(.active) {
-  background-color: #333;
+  background-color: #785964;
 }
-.rightalign {
-  border-right: none;
+#rightend {
+  border-right: 0;
   border-left: 1px solid #fff;
 }
 .active {
-  background-color: #470e0a;
-} 
+  background-color: #640d14;
+}
 /*--Footer--*/
 .footer {
   position: fixed;
@@ -55,7 +56,7 @@ body {
 }
 .footer a:link, a:visited {
   font-size: 40px;
-  color: #222;
+  color: #111;
   opacity: .30;
 }
 .footer a:hover {
@@ -67,13 +68,15 @@ body {
   font-family: 'Titillium Web';
   padding-left: 8px;
   font-size: 25px;
-  margin-top: 7px;
+  margin-top: 9px;
+}
+/*--Pages--*/
+.content {
+  height: auto;
+  width: 980px;
+  margin: 80px auto;
 }
 /*--Home--*/
-.content {
-  width: 980px;
-  margin: 70px auto 20px auto;
-}
 .boxcontainer {
   margin-top: 0;
   display: grid;
@@ -91,13 +94,13 @@ body {
 }
 .bigbox {
   grid-area: big;
-  background: #30323d;
+  background: #14281d;
   width: 645px;
   height: 550px;
 }
 .medbox {
   grid-area: med1;
-  background: #28502e;
+  background: #14281d;
   width: 310px;
   height: 260px;
 }
@@ -105,7 +108,27 @@ body {
   grid-area: med2;
 }
 .smallbox {
-  background: #28502e;
+  background: #14281d;
   width: 230px;
   height: 180px;
 }
+/*--Play--*/
+.gamebox {
+  background: #14281d;
+  height: 600px;
+}
+/*--Rules--*/
+.content h1, h2 {
+  background: #14281d;
+  color: #fff;
+  padding: 5px 25px;
+}
+.content h2 {
+  margin-left: 25px;
+}
+.content p {
+  font-family:'Roboto Slab';
+  margin-left: 25px;
+}
+/*--Register--*/
+/*--Login--*/
