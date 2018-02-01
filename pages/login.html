@@ -21,23 +21,32 @@
 
   <!--MAIN-->
   <div class="content">
-    <div class="boxcontainer">
-      <div class="bigbox" id="box0">
-      </div>
-      <div class="medbox" id ="box1">
-      </div>
-      <div class="medbox" id ="box2">
-      </div>
-    </div>
-    <div class="bottomboxes">
-      <div class="smallbox" id="box3">
-      </div>
-      <div class="smallbox" id="box4">
-      </div>
-      <div class="smallbox" id="box5">
-      </div>
-      <div class="smallbox" id="box6">
-      </div>
+    <div class="formcontainer">
+      <form>
+        <h1>Welcome back</h1>
+
+        <div class="row">
+          <div class="col-25">
+            <label for="lname">Username</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="uname" name="username" placeholder="Enter your username...">
+          </div>
+        </div>
+
+        <div class="row">
+          <div class="col-25">
+            <label for="lname">Password</label>
+          </div>
+          <div class="col-75">
+            <input type="text" id="pwd" name="password" placeholder="Enter your password...">
+          </div>
+        </div>
+
+        <div class="row">
+          <input type="submit" value="Abandon hope">
+        </div>
+      </form>
     </div>
   </div>
 
@@ -48,5 +57,6 @@
       <p>GitHub</p>
     </a>
   </div>
+
 </body>
 </html>
