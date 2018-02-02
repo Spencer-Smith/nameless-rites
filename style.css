@@ -1,14 +1,14 @@
 /* COLORS:
-  red: 640d14
-  dark purple: 260b1e
-  light purple: 97879b
-  dark green: 334730
-  light green: 96c181
+  accent: dc3522
+  light: d9cb9e
+  mid:374140
+  dark: 2a2c2b
+  black: 1e1e20
 */
 body { 
   margin: 0;
   font-family:'Roboto Slab';
-  background: #202020;
+  background: #080d11;
   color: #fff;
 }
 /*--Header--*/
@@ -23,7 +23,7 @@ body {
   margin: 0;
   padding: 0;
   overflow: hidden;
-  background: #260b1e;
+  background: #203341;
 }
 .header li {
   float: left;
@@ -40,7 +40,8 @@ body {
   text-decoration: none;
 }
 .header li a:hover:not(.active) {
-  background-color: #97879b;
+  background-color: #5e8ca4;
+  color: #2a2c2b;
 }
 #rightend {
   border-right: 0;
@@ -52,19 +53,39 @@ body {
 /*--Footer--*/
 .footer {
   position: fixed;
-  bottom: 0;
-  padding-left: 15px;
+  bottom: 0px;
+  padding: 0 15px;
+  margin-left: 10px;
   display: block;
+  background: #2a2c2b;
+  height: 20px;
+  -webkit-transition: height .4s;
+  transition: height .4s;
+}
+.footer:hover {
+	height: 50px;
+}
+.footer p {
+	display: block;
+	text-align: center;
+	font-size: .8em;
+	font-weight: bold;
+	color: #dc3522;
+	padding-top: 1px;
+	margin-top: 0;
+}
+.footer:hover p {
+	display: none;
 }
 .footer a:link, a:visited {
   font-size: 40px;
-  color: #111;
+  color: #fff;
   opacity: .30;
 }
 .footer a:hover {
   opacity: 1;
 }
-.footer p {
+.footer h1 {
   float: right;
   font-weight: bold;
   font-family: 'Titillium Web';
@@ -73,10 +94,27 @@ body {
   margin-top: 9px;
 }
 /*--Pages--*/
+.spacer {
+	height:55px;
+}
 .content {
-  height: auto;
+  background: #121921;
+  height: 100%;
   width: 980px;
-  margin: 80px auto;
+  margin: 0 auto;
+  padding: 40px 20px;
+}
+.content h1, .content h2, .content h3 {
+  background: #2a2c2b;
+  color: #fff;
+  padding: 5px 25px;
+}
+.content h2 {
+  margin-left: 25px;
+}
+.content p {
+  font-family:'Roboto Slab';
+  margin-left: 25px;
 }
 /*--Home--*/
 .banner {
@@ -104,52 +142,132 @@ body {
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 20px;
 }
-.bigbox {
+.box {
+  background-size: 200%;
+  background-position: center;
+  -webkit-transition: background-size .3s ease-out;
+  transition: background-size .3s ease-out;
+  margin: 0;
+}
+#regionmap {
+  background-image:url(https://upload.wikimedia.org/wikipedia/commons/4/4b/Raisz_1941_Olympic_Peninsula_Puget_Sound.png);
   grid-area: big;
-  background: #334730;
   width: 645px;
   height: 550px;
 }
-.medbox {
-  grid-area: med1;
-  background: #334730;
-  width: 310px;
-  height: 260px;
+.box:hover, #regionmap:hover {
+  background-size: 100%;
+  cursor: pointer;
 }
-#box2 {
+.sleeve {
+  height: 100%;
+  position: relative;
+  bottom: 0px;
+  width:100%;
+}
+.fullscreen-sleeve {
+  position: fixed;
+  top: 0;
+  left: 0;
+  height: 100vh;
+  width: 100vw;
+  z-index: 99;
+}
+.sleeve h1, .sleeve h2, .sleeve h3 {
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 10px 20px;
+  opacity: .8;
+  text-align: right;
+}
+.sleeve h2 {
+	padding: 5px 10px;
+}
+#rolesbox{
+  background-image:url(https://upload.wikimedia.org/wikipedia/commons/6/64/The_Independent_Beggar.jpg);
+  background-size: 150%;
+  background-position: center;
+}
+#rolesbox:hover {
+  background-size: 102%;
+}
+#ritesbox {
+  background-image:url(https://upload.wikimedia.org/wikipedia/commons/2/22/Still_Life_with_a_Skull_and_a_Writing_Quill_MET_DP145929.jpg);
   grid-area: med2;
 }
-.smallbox {
-  background: #334730;
+#ritesbox:hover {
+  background-size: 120%;
+}
+#box3, #box4, #box5, #box6 {
+  background: #5e8ca4;
   width: 230px;
   height: 180px;
 }
+/*--MODALS--*/
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+	padding-top:10vh;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgb(0,0,0);
+    background-color: rgba(0,0,0,0.4);
+}
+.modal-content {
+	margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+	border-radius: 15px;
+    width: 80%;
+	height: 80%;
+}
+.modal-content h2 {
+	color: #333;
+	padding-left: 50px;
+}
+#modalmap {
+  background-image:url(https://upload.wikimedia.org/wikipedia/commons/4/4b/Raisz_1941_Olympic_Peninsula_Puget_Sound.png);
+}
+#modalrole {
+  background: #fff
+}
+#modalrite {
+  background: #fff
+}
+#back {
+    color: #aaaaaa;
+    font-size: 28px;
+    font-weight: bold;
+}
+#back:hover, #back:focus {
+    color: #000;
+    text-decoration: none;
+    cursor: pointer;
+}
 /*--Play--*/
 .gamebox {
-  background: #334730;
+  background: #2a2c2b;
   height: 600px;
 }
 /*--Rules--*/
-.content h1, h2 {
-  background: #334730;
-  color: #fff;
-  padding: 5px 25px;
-}
-.content h2 {
-  margin-left: 25px;
-}
-.content p {
-  font-family:'Roboto Slab';
-  margin-left: 25px;
-}
 /*--Register--*/
 .formcontainer {
   width: 640px;
   height: auto;
   padding: 20px;
-  background: #97879b;
+  background: #2a2c2b;
   margin-left: auto;
   margin-right: auto;
+}
+.formcontainer h1 {
+  background: #5e8ca4;
 }
 .col-25 {
   float: left;
@@ -172,7 +290,7 @@ input[type=text], select {
   padding: 12px 20px;
   margin: 8px 0;
   box-sizing: border-box;
-  border: 3px solid #334730;
+  border: 3px solid #374140;
   outline: none;
 }
 input[type=text], select {
@@ -183,7 +301,7 @@ select {
   font-weight:bold;
 }
 input[type=text]:focus, select:focus {
-    border: 3px solid #96c181;
+    border: 3px solid #d9cb9e;
 }
 input[type=submit] {
   margin-top: 20px;
@@ -191,12 +309,13 @@ input[type=submit] {
   padding: 12px;
   font-family:'Permanent Marker';
   font-weight:bold;
-  font-size: 1em;
+  font-size: 1.1em;
   border: none;
   border-radius: 5px;
 }
 input[type=submit]:hover {
   background: #640d14;
   color: #eee;
+  cursor: pointer; 
 }
 /*--Login--*/

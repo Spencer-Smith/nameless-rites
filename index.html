@@ -2,7 +2,7 @@
 <html>
 <head>
   <meta charset="utf-8"/>
-  <title>wip</title>
+  <title>Nameless Rites</title>
 
   <link rel="stylesheet" href="./style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -10,6 +10,7 @@
 
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
   <script type="text/javascript" src="catchheader.js"></script>
+  <script type="text/javascript" src="openboxes.js" defer></script>
 </head>
 <body>
 
@@ -30,31 +31,73 @@
   <!--MAIN-->
   <div class="content">
     <div class="boxcontainer">
-      <div class="bigbox" id="box0">
+      <div class="box" id="regionmap">
+	    <div class="sleeve">
+          <h1>Explore the region</h1>
+		</div>
       </div>
-      <div class="medbox" id ="box1">
+	  
+      <div class="box" id ="rolesbox">
+	    <div class="sleeve">
+		  <h2>Meet the locals</h2>
+		</div>
       </div>
-      <div class="medbox" id ="box2">
+      <div class="box" id ="ritesbox">
+	    <div class="sleeve">
+		  <h2>Learn the rites</h2>
+		</div>
       </div>
     </div>
     <div class="bottomboxes">
-      <div class="smallbox" id="box3">
+      <div class="box" id="box3">
+	    <div class="sleeve">
+		  <h3>Dev blog</h3>
+		</div>
       </div>
-      <div class="smallbox" id="box4">
+      <div class="box" id="box4">
+	    <div class="sleeve">
+		  <h3>About us</h3>
+		</div>
       </div>
-      <div class="smallbox" id="box5">
+      <div class="box" id="box5">
+	    <div class="sleeve">
+		  <h3>Contact</h3>
+		</div>
       </div>
-      <div class="smallbox" id="box6">
+      <div class="box" id="box6">
+	    <div class="sleeve">
+		  <h3>Extra box</h3>
+		</div>
       </div>
+    </div>
+  </div>
+  
+  <!--MODALS-->
+  <div class="modal">
+    <div class="modal-content" id="modalmap">
+      <i id="back" class="fa fa-arrow-left"></i>
+    </div>
+  </div>
+  <div class="modal">
+    <div class="modal-content" id="modalrole">
+      <i id="back" class="fa fa-arrow-left"></i>
+	  <h2>This modal will show the available roles in the game</h2>
+    </div>
+  </div>
+  <div class="modal">
+    <div class="modal-content" id="modalrite">
+      <i id="back" class="fa fa-arrow-left"></i>
+	  <h2>This modal will show the rites (objectives) in the game</h2>
     </div>
   </div>
 
   <!--FOOTER-->
   <div class="footer">
-    <a href="https://github.com/spencer-smith/nameless-rites">
-      <i class="fa fa-github"></i>
-      <p>GitHub</p>
-    </a>
+    <p><i class="fa fa-angle-down"></i> FOOTER <i class="fa fa-angle-down"></i></p>
+      <a href="https://github.com/spencer-smith/nameless-rites">
+        <i class="fa fa-github"></i>
+        <h1>GitHub</h1>
+      </a>
   </div>
 </body>
 </html>
