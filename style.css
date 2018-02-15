@@ -202,7 +202,7 @@ body {
 #ritesbox:hover {
   background-size: 120%;
 }
-#box3, #box4, #box5, #box6 {
+#devbox, #roadmapbox, #aboutbox, #contactbox {
   background: #5e8ca4;
   width: 230px;
   height: 180px;
@@ -217,10 +217,11 @@ body {
   width: 100%;
   height: 100%;
   overflow: hidden;
-  background-color: rgb(0,0,0);
-  background-color: rgba(0,0,0,0.4);
+  background-color: rgba(0,0,0,0.6);
 }
 .modal-content {
+  display: none;
+  background: #fff;
   margin: 5vh auto 0;
   border: 1px solid #888;
   border-radius: 15px;
@@ -235,22 +236,16 @@ body {
   background-image:url(https://upload.wikimedia.org/wikipedia/commons/4/4b/Raisz_1941_Olympic_Peninsula_Puget_Sound.png);
   background-position: center;
 }
-#modalrole {
-  background: #fff
-}
-#modalrite {
-  background: #fff
-}
 #back {
   top: .5vh;
   left: .5vw;
   position: fixed;
-  color: #555;
+  color: #aaa;
   font-size: 28px;
   font-weight: bold;
 }
 #back:hover, #back:focus {
-  color: #ccc;
+  color: #eee;
   text-decoration: none;
   cursor: pointer;
 }
