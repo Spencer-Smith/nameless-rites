@@ -64,19 +64,19 @@ body {
   transition: height .4s;
 }
 .footer:hover {
-	height: 50px;
+  height: 50px;
 }
 .footer p {
-	display: block;
-	text-align: center;
-	font-size: .8em;
-	font-weight: bold;
-	color: #dc3522;
-	padding-top: 1px;
-	margin-top: 0;
+  display: block;
+  text-align: center;
+  font-size: .8em;
+  font-weight: bold;
+  color: #dc3522;
+  padding-top: 1px;
+  margin-top: 0;
 }
 .footer:hover p {
-	display: none;
+  display: none;
 }
 .footer a:link, a:visited {
   font-size: 40px;
@@ -96,7 +96,7 @@ body {
 }
 /*--Pages--*/
 .spacer {
-	height:55px;
+  height:55px;
 }
 .content {
   background: #121921;
@@ -185,7 +185,7 @@ body {
   text-align: right;
 }
 .sleeve h2 {
-	padding: 5px 10px;
+  padding: 5px 10px;
 }
 #rolesbox{
   background-image:url(https://upload.wikimedia.org/wikipedia/commons/6/64/The_Independent_Beggar.jpg);
@@ -209,32 +209,31 @@ body {
 }
 /*--MODALS--*/
 .modal {
-    display: none;
-    position: fixed;
-    z-index: 100;
-    left: 0;
-    top: 0;
-	padding-top:10vh;
-    width: 100%;
-    height: 100%;
-    overflow: auto;
-    background-color: rgb(0,0,0);
-    background-color: rgba(0,0,0,0.4);
+  display: none;
+  position: fixed;
+  z-index: 100;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  background-color: rgb(0,0,0);
+  background-color: rgba(0,0,0,0.4);
 }
 .modal-content {
-	margin: auto;
-    padding: 20px;
-    border: 1px solid #888;
-	border-radius: 15px;
-    width: 80%;
-	height: 80%;
+  margin: 5vh auto 0;
+  border: 1px solid #888;
+  border-radius: 15px;
+  width: 90%;
+  height: 90%;
 }
 .modal-content h2 {
-	color: #333;
-	padding-left: 50px;
+  color: #333;
+  padding-left: 50px;
 }
 #modalmap {
   background-image:url(https://upload.wikimedia.org/wikipedia/commons/4/4b/Raisz_1941_Olympic_Peninsula_Puget_Sound.png);
+  background-position: center;
 }
 #modalrole {
   background: #fff
@@ -243,14 +242,14 @@ body {
   background: #fff
 }
 #back {
-    color: #aaaaaa;
-    font-size: 28px;
-    font-weight: bold;
+  color: #aaaaaa;
+  font-size: 28px;
+  font-weight: bold;
 }
 #back:hover, #back:focus {
-    color: #000;
-    text-decoration: none;
-    cursor: pointer;
+  color: #000;
+  text-decoration: none;
+  cursor: pointer;
 }
 /*--Play--*/
 .gamebox {
@@ -302,7 +301,7 @@ select {
   font-weight:bold;
 }
 input[type=text]:focus, select:focus {
-    border: 3px solid #d9cb9e;
+  border: 3px solid #d9cb9e;
 }
 input[type=submit] {
   margin-top: 20px;

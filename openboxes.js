@@ -26,23 +26,23 @@ ritebox.onclick = function() {
 }
 
 backmap.onclick = function() {
-    openmodal.style.display = "none";
+	openmodal.style.display = "none";
 	openmodal = null;
 }
 
 backrole.onclick = function() {
-    openmodal.style.display = "none";
+	openmodal.style.display = "none";
 	openmodal = null;
 }
 
 backrite.onclick = function() {
-    openmodal.style.display = "none";
+	openmodal.style.display = "none";
 	openmodal = null;
 }
 
 window.onclick = function(event) {
-    if (event.target == openmodal) {
-        openmodal.style.display = "none";
+	if (event.target == openmodal) {
+	    openmodal.style.display = "none";
 		openmodal = null;
-    }
+	}
 }
