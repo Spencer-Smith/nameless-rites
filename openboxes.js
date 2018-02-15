@@ -1,48 +1,48 @@
-var mapmodal = document.getElementsByClassName("modal")[0];
-var rolemodal = document.getElementsByClassName("modal")[1];
-var ritemodal = document.getElementsByClassName("modal")[2];
+//Modal background
+var modal = document.getElementsByClassName("modal")[0];
+//Modal content
+var mapmodal = document.getElementById("modalmap");
+var rolemodal = document.getElementById("modalrole");
+var ritemodal = document.getElementById("modalrite");
+var openmodal = null;
+//Modal triggers
 var mapbox = document.getElementById("regionmap");
 var rolebox = document.getElementById("rolesbox");
 var ritebox = document.getElementById("ritesbox");
-var backmap = document.getElementsByClassName("fa fa-arrow-left")[0];
-var backrole = document.getElementsByClassName("fa fa-arrow-left")[1];
-var backrite = document.getElementsByClassName("fa fa-arrow-left")[2];
+//Closing modals
+var back = document.getElementsByClassName("fa fa-arrow-left")[0];
 
-var openmodal = null;
 
-mapbox.onclick = function() {
-	mapmodal.style.display = "block";
-	openmodal = mapmodal;
+var openModal = function(content) {
+	modal.style.display = "block";
+	content.style.display = "block";
+	openmodal = content;
+}
+
+var closeModal = function() {
+	modal.style.display = "none";
+	openmodal.style.display = "none";
+	openmodal = null;
+}
+
+mapbox.onclick = function(event) {
+	openModal(mapmodal);
 }
 
 rolebox.onclick = function() {
-	rolemodal.style.display = "block";
-	openmodal = rolemodal;
+	openModal(mapmodal);
 }
 
 ritebox.onclick = function() {
-	ritemodal.style.display = "block";
-	openmodal = ritemodal;
+	openModal(mapmodal);
 }
 
-backmap.onclick = function() {
-	openmodal.style.display = "none";
-	openmodal = null;
-}
-
-backrole.onclick = function() {
-	openmodal.style.display = "none";
-	openmodal = null;
-}
-
-backrite.onclick = function() {
-	openmodal.style.display = "none";
-	openmodal = null;
+back.onclick = function() {
+	closeModal();
 }
 
 window.onclick = function(event) {
-	if (event.target == openmodal) {
-	    openmodal.style.display = "none";
-		openmodal = null;
+       	if(event.target == modal) {
+		closeModal();
 	}
 }

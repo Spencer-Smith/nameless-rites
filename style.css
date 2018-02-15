@@ -242,12 +242,15 @@ body {
   background: #fff
 }
 #back {
-  color: #aaaaaa;
+  top: .5vh;
+  left: .5vw;
+  position: fixed;
+  color: #555;
   font-size: 28px;
   font-weight: bold;
 }
 #back:hover, #back:focus {
-  color: #000;
+  color: #ccc;
   text-decoration: none;
   cursor: pointer;
 }
