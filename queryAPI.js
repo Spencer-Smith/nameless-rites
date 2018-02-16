@@ -1,96 +1,78 @@
+/* COLORS:
+  red: #640d14
+  light: #5e8ca4
+  mid: #203341
+  dark: #121921;
+  black: #080d11
+*/
 $(document).ready(function() {
-  var APIKEY = "b1c2563d64d3be723e2a01bf7214abb6";
+  var APIKEY = "c403d9c5c43006fc5cf8dcf6907899b6";
+  var token = "5bf4ec5445d7f71baa9b0eea18661aca2d99eeca17e86db0710b153a620a7ef7";
+  var boardId = "5a85ce1220d733cce1b21def";
+  var list = 0;
 
-  // Weather stuff
-  var formatWeatherResults = function(json) {
-    var results = "";
-    results += '<h2>Weather in ' + json.name + "</h2>";
-    for (var i=0; i < Math.min(json.weather.length, 4); i++) {
-      results += "<img src=\"http://openweathermap.org/img/w/" + json.weather[i].icon + ".png\"/>";
-      results += "<p>" + json.weather[i].description + "</p>";
+  var formatTrelloList = function(cards) {
+    console.log(cards);
+    results = "";
+    for (var j = 0; j < cards.length; j++) {
+      results += "<div class=\"card\">";
+      results += "<p>" + cards[j].name + "</p>";
+      results += "</div>";
     }
-    results += '<h2>' + json.main.temp + " &deg;F</h2>"
-
-    $("#results").html(results);
-    $("#results h2, #results p").css("text-align", "center");
-    $("#results h2").css("font-size", "5em");
-    $("#results p").css("font-size", "2.8em");
-    $("#results p").css("margin", "5px 0");
-    $("#results img").css("display", "block");
-    $("#results img").css("margin-left", "auto");
-    $("#results img").css("margin-right", "auto");
+    $("#list"+list).append(results); 
+    $(".card").css("background", "#ddd");
+    $(".card").css("border-radius", "3px");
+    $(".card").css("margin", "5px 6px");
+    $(".card p").css("color", "#333");
+    $(".card p").css("margin", "0 2px");
+    $(".card p").css("padding", "2px 0");
+    $(".card p").css("cursor", "default");
   }
 
-  // Stack overflow stuff
-  var formatStackResults = function(json) {
-    console.log(json);
-    var results = "";
-    results += "<div id=\"scroller\">";
-    for (var i = 0 ; i < json.items.length; i++) {
-      results += "<div class=\"SOquestion\">";
-      //Date
-      results += "<div class=\"date_row\">";
-      var date = new Date(json.items[i].creation_date);
-      results += "<p>" + "created: " + date.toLocaleDateString(); + "</p>";
+  var formatTrelloBoard = function(lists) {
+    results = "<div id=\"solidbg\">";
+    results += "<h2><a href=\"https://trello.com/b/LkuuvtlB/nameless-rites\">Development roadmap on Trello</a></h2>";
+    results += "<div id=\"listgrid\">";
+    for (var i = 0; i < lists.length; i++) {
+      results += "<div class=\"griditem\">";
+      results += "<div class=\"trellolist\" id=\"list" + list + "\">";
+      results += "<h3>" + lists[i].name + "</h3>";
+      Trello.get("lists/"+lists[i].id+"/cards", function(cards, i){
+        console.log(i);
+        formatTrelloList(cards);
+        list++;
+      });
       results += "</div>";
-      //Question 
-      results += "<div class=\"question_row\">";
-      results += "<a href=" + json.items[i].link + "> <h1>" + json.items[i].title;
-      results += "</h1></a></div>"
-      //Tags, other
-      results += "<div class=\"tags_row\">";
-      for (var j = 0; j < json.items[i].tags.length; j++) {
-        results += "<p class=\"tag\">" + json.items[i].tags[j] + "</p>";
-      }
-      results += "<p><b>views:</b> " + json.items[i].view_count + "</p>";
-      results += "<p><b>answers:</b> " + json.items[i].answer_count + "</p>";
-      results += "</div></div>";
+      results += "</div>";
     }
     results += "</div>";
-    $("#results").html(results);
-    $(".SOquestion").css("background", "#eee");
-    $(".SOquestion").css("height", "auto");
-    $(".SOquestion").css("padding", "8px 5px 24px 5px");
-    $(".SOquestion").css("margin", "4px 0");
-    $("#results p").css("font-size", "2.3em");
-    $("#results p").css("margin", "5px 0");
-    $("#results h1").css("font-size", "4em");
-    $("#results h1").css("margin", "0");
-    $("#results a").css("text-decoration", "none");
-    $("#results a").css("color", "#000");
-    $("#scroller").css("height", "auto");
-    $("#scroller").css("overflow-y", "auto");
-    $(".date_row p").css("float", "right");
-    $(".tags_row").css("display", "inline");
-    $(".tags_row p").css("float", "right");
-    $(".tags_row p").css("padding", "0 2px");
-    $(".tag").css("float", "left");
-    $(".tag").css("background", "#ccc");
-    $(".tag").css("margin", "1px");
-    $(".tag").css("padding", "1px 3px");
+    results += "</div>";
+    $("#modalroadmap").html(results);
+    $("#modalroadmap").css("background", "#2a2c2b");
+    $("#solidbg").css("background", "#5e8ca4");
+    $("#solidbg").css("height", "90%");
+    $("#solidbg").css("margin", "5vh 0");
+    $("#solidbg").css("padding", "0 1%");
+    $("#solidbg h2").css("padding-left", "1vw");
+    $("#listgrid").css("display", "block");
+    $("#listgrid").css("height", "85%");
+    $("#listgrid").css("width", "100%");
+    $(".griditem").css("height", "100%");
+    $(".griditem").css("width", (100/lists.length).toString() + "%");
+    $(".griditem").css("float", "left");
+    $(".trellolist").css("background", "#203341");
+    $(".trellolist").css("height", "100%");
+    $(".trellolist").css("width", "97%");
+    $(".trellolist").css("margin", "0 auto");
+    $(".trellolist").css("border-radius", "5px");
+    $(".trellolist h3").css("color", "#fff");
+    $(".trellolist h3").css("padding-left", "6px");
+    $(".trellolist h3").css("margin", "0 0 8px 0");
   }
 
-  $("#submit").click(function(e) {
-    e.preventDefault();
-    var value = $("#textInput").val();
-    var myurl = "";
-    if (activePage == WEATHER) {
-      myurl += "http://api.openweathermap.org/data/2.5/weather?q=";
-      myurl += value + ",US&units=imperial" + "&APPID=" + APIKEY;
-    } else {
-      myurl += "https://api.stackexchange.com/2.2/search?order=desc&";
-      myurl += "sort=relevance&intitle=" + value + "&site=stackoverflow";
-    }
-    $.ajax({
-      url : myurl,
-      dataType : "json",
-      success : function(json) {
-        if (activePage == WEATHER)
-          formatWeatherResults(json);
-        else
-          formatStackResults(json);
-      }
-    });
+  Trello.setToken(token);
+  Trello.get("board/"+boardId+"/lists", function(lists) {
+    formatTrelloBoard(lists);
   });
 
 });

@@ -1,11 +1,16 @@
 $(document).ready(function() {
-  document.getElementById("indexheader").style.position="relative";
-  $(window).on('scroll', function() {
+  var updateHeader = function() {
     if ($(window).scrollTop() > 520) {
-      document.getElementById("indexheader").style.position="fixed";
+      $("#indexheader").css("position", "fixed");
     }
     else {
-      document.getElementById("indexheader").style.position="relative";
+      $("#indexheader").css("position", "relative");
     }
+  }
+
+  updateHeader();
+
+  $(window).on('scroll', function() {
+     updateHeader();
   });
 });

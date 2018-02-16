@@ -1,9 +1,9 @@
 /* COLORS:
-  accent: dc3522
-  light: d9cb9e
-  mid:374140
-  dark: 2a2c2b
-  black: 1e1e20
+  red: #640d14
+  light: #5e8ca4
+  mid: #203341
+  dark: #121921;
+  black: #080d11
 */
 body { 
   margin: 0;
@@ -71,7 +71,7 @@ body {
   text-align: center;
   font-size: .8em;
   font-weight: bold;
-  color: #dc3522;
+  color: #ccc;
   padding-top: 1px;
   margin-top: 0;
 }
